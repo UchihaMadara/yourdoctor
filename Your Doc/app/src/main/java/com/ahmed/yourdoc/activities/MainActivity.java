@@ -1,6 +1,8 @@
 package com.ahmed.yourdoc.activities;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,6 +19,7 @@ import android.widget.FrameLayout;
 import com.ahmed.yourdoc.Constant;
 import com.ahmed.yourdoc.R;
 import com.ahmed.yourdoc.adapter.RecyclerAdapter;
+import com.ahmed.yourdoc.fragments.AudioInsideFragment;
 import com.ahmed.yourdoc.models.SubTitle;
 import com.ahmed.yourdoc.models.TitleMenu;
 import com.ahmed.yourdoc.fragments.TitleFragment;
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
 
+    public static MainActivity mInstance;
     String names[] = Constant.name;
     String subNames[] = Constant.subName;
     ArrayList<String[]>sub=Constant.getSub();
@@ -54,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
+        mInstance=this;
         setSupportActionBar(toolbar);
         final ActionBar actionar = getSupportActionBar();
         actionar.setDisplayHomeAsUpEnabled(true);
@@ -67,11 +71,17 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(adapter);
 
-        setFragment();
+        //setFragment();
     }
 
-    private void setFragment() {
+    public void setFragment() {
         fragment = new TitleFragment();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
+    }
+
+    public void replaceFragment(Fragment fragment) {
+
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
     }
@@ -105,7 +115,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     @Override
     public void onChildClick(int position) {
         String name = subNames[position];
+        if (name.equalsIgnoreCase("google")){
+//            AudioInsideFragment fragment=new AudioInsideFragment();
+//            MainActivity.mInstance.replaceFragment(fragment);
+//            fragment.show(this);
+            startActivity(new Intent(this,AudioInside.class));
+        }
         drawerLayout.closeDrawers();
-        fragment.setTitle(name);
     }
 }

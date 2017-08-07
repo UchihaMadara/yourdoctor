@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ahmed.yourdoc.R;
+import com.ahmed.yourdoc.activities.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,14 +39,18 @@ public class TitleFragment extends Fragment {
 
     public void setTitle(String title) {
         titleName.setText(title);
+//        if (title.equalsIgnoreCase("google")){
+//            mainContent.setBackgroundColor(getResources().getColor(R.color.red_icon_color));
+//        } else if (title.equalsIgnoreCase("Motorola")){
+//            mainContent.setBackgroundColor(getResources().getColor(R.color.green_icon_color));
+//        } else if (title.equalsIgnoreCase("Samsung")){
+//            mainContent.setBackgroundColor(getResources().getColor(R.color.yellow_icon_color));
+//        } else if (title.equalsIgnoreCase("Lenevo")){
+//            mainContent.setBackgroundColor(getResources().getColor(R.color.blue_icon_color));
+//        }
         if (title.equalsIgnoreCase("google")){
-            mainContent.setBackgroundColor(getResources().getColor(R.color.red_icon_color));
-        } else if (title.equalsIgnoreCase("Motorola")){
-            mainContent.setBackgroundColor(getResources().getColor(R.color.green_icon_color));
-        } else if (title.equalsIgnoreCase("Samsung")){
-            mainContent.setBackgroundColor(getResources().getColor(R.color.yellow_icon_color));
-        } else if (title.equalsIgnoreCase("Lenevo")){
-            mainContent.setBackgroundColor(getResources().getColor(R.color.blue_icon_color));
+            AudioInsideFragment fragment=new AudioInsideFragment();
+            MainActivity.mInstance.replaceFragment(fragment);
         }
 
     }
