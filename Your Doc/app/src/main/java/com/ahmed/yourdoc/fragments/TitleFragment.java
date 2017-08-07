@@ -1,4 +1,4 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.ahmed.yourdoc.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

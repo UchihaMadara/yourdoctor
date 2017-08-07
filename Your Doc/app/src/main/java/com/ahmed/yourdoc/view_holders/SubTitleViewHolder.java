@@ -1,8 +1,9 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.view_holders;
 
 import android.view.View;
 import android.widget.TextView;
 
+import com.ahmed.yourdoc.R;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
 /**
@@ -18,7 +19,7 @@ public class SubTitleViewHolder extends ChildViewHolder {
         subTitleTextView = (TextView) itemView.findViewById(R.id.subtitle);
     }
 
-    public void setSubTitletName(String name) {
-        subTitleTextView.setText(name);
+    public void setSubTitletName(String sub) {
+        subTitleTextView.setText(sub);
     }
 }

@@ -1,4 +1,4 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

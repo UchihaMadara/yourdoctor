@@ -1,4 +1,4 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,9 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ahmed.yourdoc.Constant;
+import com.ahmed.yourdoc.R;
+import com.ahmed.yourdoc.models.SubTitle;
+import com.ahmed.yourdoc.models.TitleMenu;
+import com.ahmed.yourdoc.view_holders.SubTitleViewHolder;
+import com.ahmed.yourdoc.view_holders.TitleViewHolder;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,12 +23,14 @@ import java.util.List;
  */
 
 public class RecyclerAdapter extends ExpandableRecyclerViewAdapter<TitleViewHolder, SubTitleViewHolder> {
-
+    public static String [] name = {"تصنيفات", "تصنيفات كتابيه"};
+    ArrayList<String[]>sub= Constant.getSub();
     private Context context;
     private ItemClickChild mListener;
     public RecyclerAdapter(Context context, List<? extends ExpandableGroup> groups, Activity activity) {
         super(groups);
         this.context = context;
+
         mListener = (ItemClickChild) activity;
     }
 
@@ -44,6 +53,7 @@ public class RecyclerAdapter extends ExpandableRecyclerViewAdapter<TitleViewHold
                                       ExpandableGroup group, final int childIndex) {
 
         final SubTitle subTitle = ((TitleMenu) group).getItems().get(childIndex);
+
         holder.setSubTitletName(subTitle.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +65,7 @@ public class RecyclerAdapter extends ExpandableRecyclerViewAdapter<TitleViewHold
 
     @Override
     public void onBindGroupViewHolder(TitleViewHolder holder, int flatPosition, ExpandableGroup group) {
-        holder.setGenreTitle(context, group);
+        holder.setTiltle(context,name);
     }
 
     public interface ItemClickChild{

@@ -1,4 +1,4 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.activities;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -14,13 +14,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.ahmed.yourdoc.Constant;
+import com.ahmed.yourdoc.R;
+import com.ahmed.yourdoc.adapter.RecyclerAdapter;
+import com.ahmed.yourdoc.models.SubTitle;
+import com.ahmed.yourdoc.models.TitleMenu;
+import com.ahmed.yourdoc.fragments.TitleFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements RecyclerAdapter.ItemClickChild{
+public class MainActivity extends AppCompatActivity implements RecyclerAdapter.ItemClickChild {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -31,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
 
     String names[] = Constant.name;
     String subNames[] = Constant.subName;
+    ArrayList<String[]>sub=Constant.getSub();
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -71,9 +79,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     private List<TitleMenu> getList() {
         List<TitleMenu> list = new ArrayList<>();
         for (int i = 0; i < names.length; i++) {
+            String [] current=sub.get(i);
             List<SubTitle> subTitles = new ArrayList<>();
-            for (int j = 0; j < subNames.length; j++) {
-                SubTitle subTitle = new SubTitle(subNames[j]);
+            for (int j = 0; j < current.length; j++) {
+                SubTitle subTitle = new SubTitle(current[j]);
                 subTitles.add(subTitle);
             }
             TitleMenu model = new TitleMenu(names[i], subTitles, null);

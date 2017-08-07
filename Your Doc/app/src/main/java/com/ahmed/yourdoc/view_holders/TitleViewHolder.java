@@ -1,4 +1,4 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.view_holders;
 
 import android.content.Context;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ahmed.yourdoc.R;
+import com.ahmed.yourdoc.models.TitleMenu;
 import com.bumptech.glide.Glide;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
@@ -38,6 +40,9 @@ public class TitleViewHolder extends GroupViewHolder {
 
             }
         }
+    }
+    public void setTiltle(Context context ,String[] title){
+        titleName.setText(title[getAdapterPosition()]);
     }
 
     @Override

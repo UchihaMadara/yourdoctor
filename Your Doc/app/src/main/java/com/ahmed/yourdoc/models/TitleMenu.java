@@ -1,4 +1,4 @@
-package com.ahmed.yourdoc;
+package com.ahmed.yourdoc.models;
 
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 
