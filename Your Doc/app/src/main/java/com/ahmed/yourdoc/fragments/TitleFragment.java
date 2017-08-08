@@ -38,7 +38,7 @@ public class TitleFragment extends Fragment {
     }
 
     public void setTitle(String title) {
-        titleName.setText(title);
+        titleName.setText("title");
 //        if (title.equalsIgnoreCase("google")){
 //            mainContent.setBackgroundColor(getResources().getColor(R.color.red_icon_color));
 //        } else if (title.equalsIgnoreCase("Motorola")){

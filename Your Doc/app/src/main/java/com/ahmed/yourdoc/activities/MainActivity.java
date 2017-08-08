@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     @Override
     public void onChildClick(int position) {
         String name = subNames[position];
-        if (name.equalsIgnoreCase("google")){
+        if (name.equals("google")){
 //            AudioInsideFragment fragment=new AudioInsideFragment();
 //            MainActivity.mInstance.replaceFragment(fragment);
 //            fragment.show(this);
