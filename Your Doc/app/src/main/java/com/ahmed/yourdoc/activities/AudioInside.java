@@ -1,5 +1,4 @@
 package com.ahmed.yourdoc.activities;
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -14,14 +13,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-
 import com.ahmed.yourdoc.Constant;
 import com.ahmed.yourdoc.R;
 import com.ahmed.yourdoc.adapter.RecyclerAdapter;
 import com.ahmed.yourdoc.fragments.AudioInsideFragment;
 import com.ahmed.yourdoc.models.SubTitle;
 import com.ahmed.yourdoc.models.TitleMenu;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,17 +72,13 @@ public class AudioInside extends AppCompatActivity implements RecyclerAdapter.It
     public void setFragment() {
         fragment = new AudioInsideFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-<<<<<<< HEAD
-        fragmentTransaction.replace(R.id.frame, fragment).commit();
-=======
-        fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
->>>>>>> 36a0f317b54830b02075167b561d48c14caff408
+        fragmentTransaction.replace(R.id.frame, fragment, "MainActivityFragment").commit();
     }
 
     public void replaceFragment(Fragment fragment) {
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
+        fragmentTransaction.replace(R.id.frame, fragment, "MainActivityFragment").commit();
     }
 
     private List<TitleMenu> getList() {

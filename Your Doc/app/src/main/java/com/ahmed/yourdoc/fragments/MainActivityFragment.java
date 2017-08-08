@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
  * Created by sunil on 12/24/16.
  */
 
-public class TitleFragment extends Fragment {
+public class MainActivityFragment extends Fragment {
 
     View rootView;
 

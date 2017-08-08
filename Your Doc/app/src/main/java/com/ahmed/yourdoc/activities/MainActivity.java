@@ -19,10 +19,9 @@ import android.widget.FrameLayout;
 import com.ahmed.yourdoc.Constant;
 import com.ahmed.yourdoc.R;
 import com.ahmed.yourdoc.adapter.RecyclerAdapter;
-import com.ahmed.yourdoc.fragments.AudioInsideFragment;
+import com.ahmed.yourdoc.fragments.MainActivityFragment;
 import com.ahmed.yourdoc.models.SubTitle;
 import com.ahmed.yourdoc.models.TitleMenu;
-import com.ahmed.yourdoc.fragments.TitleFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     @BindView(R.id.frame)
     FrameLayout frame;
 
-    TitleFragment fragment;
+    MainActivityFragment fragment;
 
 
     @Override
@@ -75,26 +74,30 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     }
 
     public void setFragment() {
-        fragment = new TitleFragment();
+        fragment = new MainActivityFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
+        fragmentTransaction.replace(R.id.frame, fragment, "MainActivityFragment").commit();
     }
 
     public void replaceFragment(Fragment fragment) {
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
+        fragmentTransaction.replace(R.id.frame, fragment, "MainActivityFragment").commit();
     }
 
     private List<TitleMenu> getList() {
         List<TitleMenu> list = new ArrayList<>();
         for (int i = 0; i < names.length; i++) {
-            String [] current=sub.get(i);
-            List<SubTitle> subTitles = new ArrayList<>();
-            for (int j = 0; j < current.length; j++) {
-                SubTitle subTitle = new SubTitle(current[j]);
-                subTitles.add(subTitle);
-            }
+
+
+
+                String[] current = sub.get(i);
+                List<SubTitle> subTitles = new ArrayList<>();
+                for (int j = 0; j < current.length; j++) {
+                    SubTitle subTitle = new SubTitle(current[j]);
+                    subTitles.add(subTitle);
+                }
+
             TitleMenu model = new TitleMenu(names[i], subTitles, null);
             list.add(model);
         }

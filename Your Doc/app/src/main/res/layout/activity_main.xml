@@ -34,6 +34,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"></android.support.v7.widget.RecyclerView>
 
+            <TextView
+                android:id="@+id/previous_records"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerView"
+                android:layout_marginTop="30dp"
+                android:text="استمع لتسجيلاتك السابقة"
+                android:textColor="#F00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/close_drawer"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="50dp"/>
+
+
         </RelativeLayout>
 
 

@@ -60,7 +60,7 @@ public class TitleViewHolder extends GroupViewHolder {
                 new RotateAnimation(360, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(300);
         rotate.setFillAfter(true);
-        arrow.setAnimation(rotate);
+        arrow.setImageResource(R.drawable.iconplus);
     }
 
     private void animateCollapse() {
@@ -68,6 +68,6 @@ public class TitleViewHolder extends GroupViewHolder {
                 new RotateAnimation(180, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         rotate.setDuration(300);
         rotate.setFillAfter(true);
-        arrow.setAnimation(rotate);
+        arrow.setImageResource(R.drawable.iconsminus);
     }
 }
