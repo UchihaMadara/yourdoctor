@@ -40,5 +40,5 @@ public class AudioInsideFragment extends Fragment {
     public void show(Context ctx) {
         Toast.makeText(ctx, "hey", Toast.LENGTH_LONG).show();
     }
-    
+
 }
