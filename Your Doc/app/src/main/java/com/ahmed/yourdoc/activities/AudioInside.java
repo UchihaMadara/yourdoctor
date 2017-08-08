@@ -75,7 +75,11 @@ public class AudioInside extends AppCompatActivity implements RecyclerAdapter.It
     public void setFragment() {
         fragment = new AudioInsideFragment();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+<<<<<<< HEAD
+        fragmentTransaction.replace(R.id.frame, fragment).commit();
+=======
         fragmentTransaction.replace(R.id.frame, fragment, "TitleFragment").commit();
+>>>>>>> 36a0f317b54830b02075167b561d48c14caff408
     }
 
     public void replaceFragment(Fragment fragment) {
