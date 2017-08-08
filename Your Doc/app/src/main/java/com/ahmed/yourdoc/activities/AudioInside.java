@@ -2,28 +2,23 @@ package com.ahmed.yourdoc.activities;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
-import android.os.Handler;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
-import android.widget.SeekBar;
 
 import com.ahmed.yourdoc.Constant;
 import com.ahmed.yourdoc.R;
 import com.ahmed.yourdoc.adapter.RecyclerAdapter;
 import com.ahmed.yourdoc.fragments.AudioInsideFragment;
-import com.ahmed.yourdoc.fragments.TitleFragment;
 import com.ahmed.yourdoc.models.SubTitle;
 import com.ahmed.yourdoc.models.TitleMenu;
 
