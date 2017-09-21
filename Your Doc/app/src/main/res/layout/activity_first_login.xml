@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#41A8F7">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/login_edit" />
+
+    <EditText
+        android:id="@+id/name_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/login_edittet_selector"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="أسم الدخول"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/pass_edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/name_edittext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_edittet_selector"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="كلمة السر"
+        android:inputType="textPassword" />
+
+
+
+    <EditText
+        android:id="@+id/confirm_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/login_edittet_selector"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="تأكيد كلمة السر"
+        android:inputType="textPassword"
+        android:layout_below="@+id/pass_edittext"
+        android:layout_alignLeft="@+id/pass_edittext"
+        android:layout_alignStart="@+id/pass_edittext" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/confirm_pass"
+        android:layout_alignRight="@+id/confirm_pass"
+        android:layout_below="@+id/confirm_pass"
+        android:layout_marginTop="17dp"
+        android:text="لديك حساب ؟ " />
+
+    <TextView
+        android:id="@+id/first_login_already_user"
+        android:textColor="#FFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toStartOf="@+id/textView4"
+        android:text="قم بالدخول " />
+    <Button
+        android:layout_width="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/first_login_submit"
+        android:text="Submit"
+        android:textColor="#FFF"
+        android:layout_marginBottom="15dp"
+        android:background="#F2CC5D"
+        android:layout_below="@id/textView4"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/first_login_submit"
+        android:layout_alignParentBottom="true"
+        android:background="#F2CC5D">
+
+        <TextView
+            android:id="@+id/copy_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="right"
+            android:text="جميع الحقوق مفوظة لشركة الفاستيم الشرق الاوسط" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+</ScrollView>

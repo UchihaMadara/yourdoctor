@@ -48,8 +48,8 @@ public class MainActivityFragment extends Fragment {
 //        } else if (title.equalsIgnoreCase("Lenevo")){
 //            mainContent.setBackgroundColor(getResources().getColor(R.color.blue_icon_color));
 //        }
-        if (title.equalsIgnoreCase("google")){
-            AudioInsideFragment fragment=new AudioInsideFragment();
+        if (title.equalsIgnoreCase("google")) {
+            AudioInsideFragment fragment = new AudioInsideFragment();
             MainActivity.mInstance.replaceFragment(fragment);
         }
 

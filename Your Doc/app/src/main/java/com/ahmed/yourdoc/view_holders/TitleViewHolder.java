@@ -27,13 +27,13 @@ public class TitleViewHolder extends GroupViewHolder {
         super(itemView);
         titleName = (TextView) itemView.findViewById(R.id.list_item_name);
         arrow = (ImageView) itemView.findViewById(R.id.list_item_arrow);
-        icon = (ImageView) itemView.findViewById(R.id.list_item_icon);
+
     }
 
     public void setGenreTitle(Context context, ExpandableGroup title) {
         if (title instanceof TitleMenu) {
             titleName.setText(title.getTitle());
-            if (((TitleMenu) title).getImageUrl()!= null && !((TitleMenu) title).getImageUrl().isEmpty()){
+            if (((TitleMenu) title).getImageUrl() != null && !((TitleMenu) title).getImageUrl().isEmpty()) {
                 Glide.with(context)
                         .load(((TitleMenu) title).getImageUrl())
                         .into(icon);
@@ -41,7 +41,8 @@ public class TitleViewHolder extends GroupViewHolder {
             }
         }
     }
-    public void setTiltle(Context context ,String[] title){
+
+    public void setTiltle(Context context, String[] title) {
         titleName.setText(title[getAdapterPosition()]);
     }
 

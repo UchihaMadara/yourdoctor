@@ -3,32 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginBottom="8dp"
-    android:layout_marginTop="8dp">
+    android:background="#41A8F7"
+    >
 
-    <ImageView
-        android:src="@drawable/ic_android_black_24dp"
-        android:id="@+id/list_item_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp" />
+
 
     <TextView
-        android:layout_toRightOf="@+id/list_item_icon"
         android:id="@+id/list_item_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#F00"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
         android:gravity="center|left"
-        android:layout_alignBaseline="@+id/list_item_icon"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
         tools:text="Title" />
 
     <ImageView
         android:id="@+id/list_item_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
         android:src="@drawable/iconplus" />
 
 </RelativeLayout>

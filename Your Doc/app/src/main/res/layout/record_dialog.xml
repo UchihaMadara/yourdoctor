@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:background="@drawable/record_dialog_border"
+    android:layout_height="250dp" >
+
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="إسم المقطع"
+        android:layout_below="@+id/spinner"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_alignEnd="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="القسم"
+
+
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_alignEnd="@+id/spinner" />
+
+    <EditText
+        android:id="@+id/type_et"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginRight="30dp"
+        android:inputType="textPersonName"
+        android:hint="يساعدك الإسم في الرجوع إليه"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/cancel_bt"
+        android:layout_alignStart="@+id/cancel_bt" />
+
+    <Button
+        android:id="@+id/save_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="حفظ"
+
+        android:background="@drawable/record_button_selector"
+        android:layout_below="@+id/type_et"
+        android:layout_alignRight="@+id/spinner"
+        android:layout_alignEnd="@+id/spinner"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/cancel_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/record_button_selector"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
+        android:text="إلغاء"
+        android:layout_alignBaseline="@+id/save_bt"
+        android:layout_alignBottom="@+id/save_bt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

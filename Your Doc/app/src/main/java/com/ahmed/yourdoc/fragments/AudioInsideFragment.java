@@ -10,9 +10,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ahmed.yourdoc.R;
@@ -53,16 +51,16 @@ public class AudioInsideFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        handler=new Handler();
-        audioinside= (SeekBar) getActivity().findViewById(R.id.audio_inside_seek_bar);
-        mediaPlayer=MediaPlayer.create(getActivity(),R.raw.demonstrative);
+        handler = new Handler();
+        audioinside = (SeekBar) getActivity().findViewById(R.id.audio_inside_seek_bar);
+        mediaPlayer = MediaPlayer.create(getActivity(), R.raw.demonstrative);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
         audioinside.setMax(mediaPlayer.getDuration());
         audioinside.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (fromUser){
+                if (fromUser) {
                     mediaPlayer.seekTo(progress);
                 }
             }
@@ -79,16 +77,16 @@ public class AudioInsideFragment extends Fragment {
         });
     }
 
-    public void lifeCycle(){
+    public void lifeCycle() {
         audioinside.setProgress(mediaPlayer.getCurrentPosition());
-        if(mediaPlayer.isPlaying()){
-            runnable=new Runnable() {
+        if (mediaPlayer.isPlaying()) {
+            runnable = new Runnable() {
                 @Override
                 public void run() {
                     lifeCycle();
                 }
             };
-            handler.postDelayed(runnable,1000);
+            handler.postDelayed(runnable, 1000);
         }
     }
 
@@ -97,7 +95,9 @@ public class AudioInsideFragment extends Fragment {
         super.onResume();
         mediaPlayer.start();
         lifeCycle();
-    }  @Override
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
         mediaPlayer.pause();

@@ -31,17 +31,16 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements RecyclerAdapter.ItemClickChild {
 
+    public static MainActivity mInstance;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     @BindView(R.id.nav_view)
     NavigationView navView;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
-
-    public static MainActivity mInstance;
     String names[] = Constant.name;
     String subNames[] = Constant.subName;
-    ArrayList<String[]>sub=Constant.getSub();
+    ArrayList<String[]> sub = Constant.getSub();
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mInstance=this;
+        mInstance = this;
         setSupportActionBar(toolbar);
         final ActionBar actionar = getSupportActionBar();
         actionar.setDisplayHomeAsUpEnabled(true);
@@ -90,13 +89,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
         for (int i = 0; i < names.length; i++) {
 
 
-
-                String[] current = sub.get(i);
-                List<SubTitle> subTitles = new ArrayList<>();
-                for (int j = 0; j < current.length; j++) {
-                    SubTitle subTitle = new SubTitle(current[j]);
-                    subTitles.add(subTitle);
-                }
+            String[] current = sub.get(i);
+            List<SubTitle> subTitles = new ArrayList<>();
+            for (int j = 0; j < current.length; j++) {
+                SubTitle subTitle = new SubTitle(current[j]);
+                subTitles.add(subTitle);
+            }
 
             TitleMenu model = new TitleMenu(names[i], subTitles, null);
             list.add(model);
@@ -118,11 +116,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerAdapter.I
     @Override
     public void onChildClick(int position) {
         String name = subNames[position];
-        if (name.equals("google")){
+        if (name.equals("google")) {
 //            AudioInsideFragment fragment=new AudioInsideFragment();
 //            MainActivity.mInstance.replaceFragment(fragment);
 //            fragment.show(this);
-            startActivity(new Intent(this,AudioInside.class));
+            startActivity(new Intent(this, AudioInside.class));
         }
         drawerLayout.closeDrawers();
     }

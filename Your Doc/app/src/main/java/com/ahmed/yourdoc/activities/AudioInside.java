@@ -1,4 +1,5 @@
 package com.ahmed.yourdoc.activities;
+
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -13,12 +14,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+
 import com.ahmed.yourdoc.Constant;
 import com.ahmed.yourdoc.R;
 import com.ahmed.yourdoc.adapter.RecyclerAdapter;
 import com.ahmed.yourdoc.fragments.AudioInsideFragment;
 import com.ahmed.yourdoc.models.SubTitle;
 import com.ahmed.yourdoc.models.TitleMenu;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,17 +30,16 @@ import butterknife.ButterKnife;
 
 public class AudioInside extends AppCompatActivity implements RecyclerAdapter.ItemClickChild {
 
+    public static AudioInside mInstance;
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
     @BindView(R.id.nav_view)
     NavigationView navView;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawerLayout;
-
-    public static AudioInside mInstance;
     String names[] = Constant.name;
     String subNames[] = Constant.subName;
-    ArrayList<String[]> sub=Constant.getSub();
+    ArrayList<String[]> sub = Constant.getSub();
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -53,7 +55,7 @@ public class AudioInside extends AppCompatActivity implements RecyclerAdapter.It
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_inside);
         ButterKnife.bind(this);
-        mInstance=this;
+        mInstance = this;
         setSupportActionBar(toolbar);
         final ActionBar actionar = getSupportActionBar();
         actionar.setDisplayHomeAsUpEnabled(true);
@@ -84,7 +86,7 @@ public class AudioInside extends AppCompatActivity implements RecyclerAdapter.It
     private List<TitleMenu> getList() {
         List<TitleMenu> list = new ArrayList<>();
         for (int i = 0; i < names.length; i++) {
-            String [] current=sub.get(i);
+            String[] current = sub.get(i);
             List<SubTitle> subTitles = new ArrayList<>();
             for (int j = 0; j < current.length; j++) {
                 SubTitle subTitle = new SubTitle(current[j]);
@@ -110,7 +112,7 @@ public class AudioInside extends AppCompatActivity implements RecyclerAdapter.It
     @Override
     public void onChildClick(int position) {
         String name = subNames[position];
-        if (name.equalsIgnoreCase("google")){
+        if (name.equalsIgnoreCase("google")) {
 //            AudioInsideFragment fragment=new AudioInsideFragment();
 //            MainActivity.mInstance.replaceFragment(fragment);
 //            fragment.show(this);

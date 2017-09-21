@@ -23,10 +23,11 @@ import java.util.List;
  */
 
 public class RecyclerAdapter extends ExpandableRecyclerViewAdapter<TitleViewHolder, SubTitleViewHolder> {
-    public static String [] name = {"تصنيفات", "تصنيفات كتابيه"};
-    ArrayList<String[]>sub= Constant.getSub();
+    public static String[] name = {"تصنيفات", "تصنيفات كتابيه"};
+    ArrayList<String[]> sub = Constant.getSub();
     private Context context;
     private ItemClickChild mListener;
+
     public RecyclerAdapter(Context context, List<? extends ExpandableGroup> groups, Activity activity) {
         super(groups);
         this.context = context;
@@ -65,10 +66,10 @@ public class RecyclerAdapter extends ExpandableRecyclerViewAdapter<TitleViewHold
 
     @Override
     public void onBindGroupViewHolder(TitleViewHolder holder, int flatPosition, ExpandableGroup group) {
-        holder.setTiltle(context,name);
+        holder.setTiltle(context, name);
     }
 
-    public interface ItemClickChild{
+    public interface ItemClickChild {
         void onChildClick(int position);
     }
 }
