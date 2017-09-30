@@ -16,11 +16,7 @@
         <activity android:name=".activities.MainActivity"></activity>
         <activity android:name=".activities.AudioInside" />
         <activity android:name=".activities.LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.RecordActivity"
@@ -41,7 +37,13 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activities.OldRecordsActivity"></activity>
+        <activity android:name=".activities.OldRecordsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

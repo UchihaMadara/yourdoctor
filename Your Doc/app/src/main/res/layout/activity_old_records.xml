@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ahmed.yourdoc.activities.OldRecordsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:id="@id/tool_bar"
+        layout="@layout/tool_bar"></include>
+
+    <LinearLayout
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/tool_bar"
+        android:background="#FFF"
+        android:orientation="horizontal"></LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/layout_img_container"
+        android:orientation="vertical"
+        android:background="@drawable/slider_image"
+        android:layout_below="@id/space">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/old_records_transparent_layout"
+            android:layout_alignParentBottom="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:text="تسجيلات سابقة"
+                android:textColor="#FFF"
+                android:layout_marginRight="20dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_below="@id/layout_img_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_above="@id/linearLayout"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#F2cc5c"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/copy_right_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="8dp"
+            android:gravity="right"
+            android:text="جميع الحقوق مفوظة لشركة الفاستيم الشرق الاوسط" />
+    </LinearLayout>
+</RelativeLayout>
