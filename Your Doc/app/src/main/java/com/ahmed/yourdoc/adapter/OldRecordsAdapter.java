@@ -1,9 +1,12 @@
 package com.ahmed.yourdoc.adapter;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.ahmed.yourdoc.R;
 
@@ -12,9 +15,11 @@ import com.ahmed.yourdoc.R;
  */
 
 public class OldRecordsAdapter extends RecyclerView.Adapter<OldRecordsAdapter.ViewHolder> {
-
-
-    public OldRecordsAdapter() {
+    Context context;
+    Typeface face;
+    public OldRecordsAdapter(Context context) {
+        this.context = context;
+        face = Typeface.createFromAsset(context.getAssets(), "font_ar.ttf");
 
     }
 
@@ -28,6 +33,8 @@ public class OldRecordsAdapter extends RecyclerView.Adapter<OldRecordsAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.description.setTypeface(face);
+       // holder.type.setTypeface(face);
 
     }
 
@@ -37,10 +44,15 @@ public class OldRecordsAdapter extends RecyclerView.Adapter<OldRecordsAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
+        TextView description, type, identifier;
 
         public ViewHolder(View view) {
             super(view);
+            description = (TextView) view.findViewById(R.id.description);
+            type = (TextView) view.findViewById(R.id.category);
+            identifier = (TextView) view.findViewById(R.id.identifier);
+            description.setTypeface(face);
+            //type.setTypeface(face);
 
         }
     }
